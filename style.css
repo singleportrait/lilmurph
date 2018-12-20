@@ -3,21 +3,47 @@ html, body {
 
 body {
   color: #6234F4;
-  font-family: "Open Sans Condensed", sans-serif;
+  color: #000;
+  color: rgb(255, 0, 192);
+  font-family: "Arial", sans-serif;
 }
 
 a, a:visited, a:active {
   color: #3C1F96;
+  color: #6234F4;
 }
 
 a:hover {
   color: #8266D8;
 }
 
+.left_aligned {
+  text-align: left;
+}
+
+.bullets {
+  padding-left: 1em;
+  line-height: 1.6;
+}
+
 .container {
-  max-width: 600px;
+  max-width: 590px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+}
+
+.header_with_emojis {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inline_emoji {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  /* top: .12em; */
+  /* padding: 0 .3em; */
 }
 
 .flashing_image {
@@ -29,6 +55,27 @@ a:hover {
   right: 0;
   bottom: 0;
   background-size: cover;
+  background-position: center center;
   background-color: #fff;
   z-index: 1;
+}
+
+.random_image {
+  width: 120px;
+  height: 120px;
+  max-width: 20vw;
+  max-height: 20vw;
+  position: absolute;
+  z-index: 1;
+  background-image: url("images/hah!.png");
+  background-size: cover;
+  background-position: center center;
+  top: 50px;
+  right: -5%;
+  display: none;
+  transform: rotate(20deg);
+}
+
+.random_image--show {
+  display: block;
 }
