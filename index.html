@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta type="og:image" content="" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="images/party-time.jpeg" as="image">
+    <link rel="preload" href="images/shrimp.jpeg" as="image">
+    <link rel="preload" href="images/milk-snake.jpeg" as="image">
+    <link rel="preload" href="images/cat.jpeg" as="image">
+    <link rel="preload" href="images/house-party.jpeg" as="image">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+
+    <title>Jenn & Lila's Holiday Partie</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to our New Year Evey's Extravaganza</h1>
+      <h2>It's on New Year's Eve</h2>
+      <h3>Location: <a href="https://www.google.com/maps/place/84+Hart+St,+Brooklyn,+NY+11206/@40.6930673,-73.9504146,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25bed796bf889:0x6a31346d444e8d6d!8m2!3d40.6930673!4d-73.9482206">Jenn & Lila's House</a>, apartment 4F</h3>
+      <h4>Time: 8 o'clock until at least past midnight</h4>
+      <h4>Details: Bring a drink or a snack of your special preference.</h4>
+      <h4>Featuring: Fog, mood lighting, potentially disposable furniture (?), a special cocktail and maybe also a shrimp cocktail</h4>
+
+      <iframe src="https://services.cognitoforms.com/f/txoMxyxF8keb1eaQ4bVITw?id=1" style="position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="544" width="100%"></iframe>
+    </div>
+
+    <script src="https://services.cognitoforms.com/scripts/embed.js" async></script>
+    <noscript>
+      $(document).ready(function() {
+        var images = [
+          "images/party-time.jpeg",
+          "images/milk-snake.jpeg",
+          "images/cat.jpeg",
+          "images/house-party.jpeg",
+        ];
+        $(images).each(function(i, image) {
+          var imageInterval = 1000;
+          if (i === i.length - 1) {
+            imageInterval = 3000;
+          }
+
+          setInterval(function() {
+            $(".flashing_image").css("background-image", "url(" + image + ")");
+          }, imageInterval)
+        });
+        $(".flashing_image").click(function() {
+          $(this).remove();
+        });
+      });
+    </noscript>
+
+    <script type="text/javascript">
+      const image = document.querySelector('.flashing_image');
+      let currentImage = 'images/party-time.jpeg';
+
+      const imageURLs = [
+        'images/party-time.jpeg',
+        'images/milk-snake.jpeg',
+        'images/cat.jpeg',
+        'images/house-party.jpeg',
+      ];
+
+      const updateImageURL = (url) => {
+        image.setAttribute('style', `background-image: url('${url}')`);
+        currentImage = url;
+      };
+
+      const setRandomImage = () => {
+        const randomURL = imageURLs[Math.floor(Math.random() * imageURLs.length)];
+        updateImageURL(randomURL);
+      };
+
+      const setNextImage = () => {
+        const currentIndex = imageURLs.indexOf(currentImage);
+        const nextIndex = (currentIndex + 1) % imageURLs.length;
+        const nextURL = imageURLs[nextIndex];
+        updateImageURL(nextURL);
+      };
+
+      const interval = window.setInterval(setNextImage, 100);
+
+      setTimeout(() => {
+        clearInterval(interval);
+      }, 800);
+
+      image.addEventListener('click', () => {
+        clearInterval(interval);
+        updateImageURL(imageURLs[0]);
+      });
+    </script>
+  </body>
+</html>
