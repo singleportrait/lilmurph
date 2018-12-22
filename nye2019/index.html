@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta property="og:title" content="Jenn & Lila's Holiday Partie" />
+    <meta property="og:image" content="images/2019.png" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet"> -->
+
+    <title>Jenn & Lila's Holiday Partie</title>
+  </head>
+  <body>
+    <div class="flashing_image"></div>
+    <div class="loading_screen">
+      <h1>it's loadin' time!</h1>
+      <pre class="hang_loose">
+           _        ,-.    / )
+          ( `.     // /-._/ /
+           `\ \   /(_/ / / /
+             ; `-`  (_/ / /
+             |       (_/ /
+             \          /
+              )       /`
+             /      /`
+      </pre>
+    </div>
+
+    <div class="container">
+      <h1 class="header_with_emojis">
+        <img src="images/clown.png" class="inline_emoji" />
+        <span>JENN AND LILA PRESENT NEW YEAR'S EVE</span>
+        <img src="images/cowboy.png" class="inline_emoji" />
+      </h1>
+      <h2>"Coming to you this New Year's Eve"</h2>
+      <h4>Time: 8:30pm - ????</h4>
+      <h4 class="left_aligned">
+        Let us paint you a picture&hellip; after scaling four flights of stairs, breathless, you emerge.
+        <br />
+        into a sprawling 400sq ft apartment&hellip; it smells&hellip; like an artisanal candle&hellip; but not for long. the Bar&hellip; is open. Spread across two rooms and a bathroom there will be&hellip;
+        <br />
+        <div class="bullets">
+          &mdash; fog
+          <br />
+          &mdash; bedroom karaoke
+          <br />
+          &mdash; midnight champagne toast
+          <br />
+          &mdash; projector w cool shit on it
+          <br />
+          &mdash; dema doing a dj set on a telephone
+          <br />
+          &mdash; and &hellip; you!
+        </div>
+      </h4>
+      <h4>
+      Pls bring a drink, drug, or snack of your pleasure. No reasonable offer will be refused!!!!!!!!
+      </h4>
+      <h4>
+        Cute new friends welcome
+      </h4>
+      <h3>
+        RSVP BELOW TO RECEIVE MORE INTERESTING INFO AS THIS PARTY DEVELOPS, SOMETIMES WE SEND SPECIAL OFFERS TO OUR LOYAL SUBSCRIBERS!!!
+      </h3>
+
+      <div class="hover_emoji"></div>
+
+      <!-- <iframe src="https://services.cognitoforms.com/f/txoMxyxF8keb1eaQ4bVITw?id=1" style="position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="544" width="100%"></iframe> -->
+      <!-- <script src="https://services.cognitoforms.com/scripts/embed.js" async></script> -->
+
+      <!-- <div class="typeform-widget" data-url="https://lilamurphy.typeform.com/to/zgxkfp" data-transparency="100" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
+      <div class="typeform-widget" data-url="https://lilamurphy.typeform.com/to/zgxkfp" data-hide-headers=true data-hide-footer=true></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+    </div>
+
+
+    <div>
+      <link class="preloaded_images" rel="preload" href="images/2019.png" as="image">
+      <link class="preloaded_images" rel="preload" href="images/cat.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/elijah.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/glass.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/house-party.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/keanu.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/milk-snake.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/party-time.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/shrimp.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/speed-dating.jpeg" as="image">
+      <link class="preloaded_images" rel="preload" href="images/wake-up.jpeg" as="image">
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" async></script> -->
+
+    <script type="text/javascript">
+      const image = document.querySelector('.flashing_image');
+
+      const preloadedImages = document.getElementsByClassName("preloaded_images");
+      let originalImageURLs = [];
+
+      for (let i = 0; i < preloadedImages.length; i++) {
+        originalImageURLs.push(preloadedImages[i].getAttribute('href'));
+      }
+
+      const imageURLs = shuffle(originalImageURLs);
+      let currentImage = imageURLs[0];
+
+      const updateImageURL = (url) => {
+        image.setAttribute('style', `background-image: url('${url}')`);
+        currentImage = url;
+      };
+
+      const setRandomImage = () => {
+        const randomURL = imageURLs[Math.floor(Math.random() * imageURLs.length)];
+        updateImageURL(randomURL);
+      };
+
+      const setNextImage = () => {
+        const currentIndex = imageURLs.indexOf(currentImage);
+        const nextIndex = (currentIndex + 1) % imageURLs.length;
+        const nextURL = imageURLs[nextIndex];
+        updateImageURL(nextURL);
+      };
+
+      const intervalLength = 200;
+      const loadTime = 2000;
+      const interval = window.setInterval(setNextImage, intervalLength);
+
+      setTimeout(() => {
+          document.querySelector('.loading_screen').classList.toggle('loading_screen--hide');
+        setTimeout(() => {
+          clearInterval(interval);
+          image.remove();
+          document.querySelector('.hover_emoji').classList.toggle('hover_emoji--show');
+        }, intervalLength*imageURLs.length);
+      }, loadTime);
+
+      image.addEventListener('click', () => {
+        clearInterval(interval);
+        updateImageURL(imageURLs[0]);
+      });
+
+      function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+      }
+    </script>
+
+    <noscript>
+      $(document).ready(function() {
+        var images = [
+          "images/party-time.jpeg",
+          "images/milk-snake.jpeg",
+          "images/cat.jpeg",
+          "images/house-party.jpeg",
+        ];
+        $(images).each(function(i, image) {
+          var imageInterval = 1000;
+          if (i === i.length - 1) {
+            imageInterval = 3000;
+          }
+
+          setInterval(function() {
+            $(".flashing_image").css("background-image", "url(" + image + ")");
+          }, imageInterval)
+        });
+        $(".flashing_image").click(function() {
+          $(this).remove();
+        });
+      });
+    </noscript>
+  </body>
+</html>
