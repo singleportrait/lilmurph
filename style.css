@@ -79,3 +79,14 @@ a:hover {
 .random_image--show {
   display: block;
 }
+
+.typeform-widget {
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 500px) {
+  .typeform-widget {
+    height: 300px;
+  }
+}
